@@ -12,12 +12,13 @@
 <!-- ApplicationController -->
 <g id="node1" class="node">
 <title>ApplicationController</title>
-<path fill="none" stroke="#000000" d="M12,-75C12,-75 124,-75 124,-75 130,-75 136,-81 136,-87 136,-87 136,-157 136,-157 136,-163 130,-169 124,-169 124,-169 12,-169 12,-169 6,-169 0,-163 0,-157 0,-157 0,-87 0,-87 0,-81 6,-75 12,-75"/>
-<text text-anchor="middle" x="68" y="-153.8" font-family="Times,serif" font-size="14.00" fill="#000000">ApplicationController</text>
-<polyline fill="none" stroke="#000000" points="0,-146 136,-146 "/>
-<polyline fill="none" stroke="#000000" points="0,-122 136,-122 "/>
-<polyline fill="none" stroke="#000000" points="0,-98 136,-98 "/>
-<text text-anchor="start" x="8" y="-82.8" font-family="Times,serif" font-size="14.00" fill="#000000">_layout</text>
+<path fill="none" stroke="#000000" d="M12,-67.5C12,-67.5 124,-67.5 124,-67.5 130,-67.5 136,-73.5 136,-79.5 136,-79.5 136,-164.5 136,-164.5 136,-170.5 130,-176.5 124,-176.5 124,-176.5 12,-176.5 12,-176.5 6,-176.5 0,-170.5 0,-164.5 0,-164.5 0,-79.5 0,-79.5 0,-73.5 6,-67.5 12,-67.5"/>
+<text text-anchor="middle" x="68" y="-161.3" font-family="Times,serif" font-size="14.00" fill="#000000">ApplicationController</text>
+<polyline fill="none" stroke="#000000" points="0,-153.5 136,-153.5 "/>
+<polyline fill="none" stroke="#000000" points="0,-129.5 136,-129.5 "/>
+<polyline fill="none" stroke="#000000" points="0,-105.5 136,-105.5 "/>
+<text text-anchor="start" x="8" y="-90.3" font-family="Times,serif" font-size="14.00" fill="#000000">_layout</text>
+<text text-anchor="start" x="8" y="-75.3" font-family="Times,serif" font-size="14.00" fill="#000000">fill_fridge</text>
 </g>
 <!-- CookingListItemsController -->
 <g id="node2" class="node">
@@ -34,21 +35,23 @@
 <!-- FridgeItemsController -->
 <g id="node3" class="node">
 <title>FridgeItemsController</title>
-<path fill="none" stroke="#000000" d="M354,-15.5C354,-15.5 468,-15.5 468,-15.5 474,-15.5 480,-21.5 480,-27.5 480,-27.5 480,-216.5 480,-216.5 480,-222.5 474,-228.5 468,-228.5 468,-228.5 354,-228.5 354,-228.5 348,-228.5 342,-222.5 342,-216.5 342,-216.5 342,-27.5 342,-27.5 342,-21.5 348,-15.5 354,-15.5"/>
-<text text-anchor="middle" x="411" y="-213.3" font-family="Times,serif" font-size="14.00" fill="#000000">FridgeItemsController</text>
-<polyline fill="none" stroke="#000000" points="342,-205.5 480,-205.5 "/>
-<text text-anchor="start" x="350" y="-190.3" font-family="Times,serif" font-size="14.00" fill="#000000">create</text>
-<text text-anchor="start" x="350" y="-175.3" font-family="Times,serif" font-size="14.00" fill="#000000">decrease</text>
-<text text-anchor="start" x="350" y="-160.3" font-family="Times,serif" font-size="14.00" fill="#000000">delete</text>
-<text text-anchor="start" x="350" y="-145.3" font-family="Times,serif" font-size="14.00" fill="#000000">empty</text>
-<text text-anchor="start" x="350" y="-130.3" font-family="Times,serif" font-size="14.00" fill="#000000">fill</text>
-<text text-anchor="start" x="350" y="-115.3" font-family="Times,serif" font-size="14.00" fill="#000000">increase</text>
-<text text-anchor="start" x="350" y="-100.3" font-family="Times,serif" font-size="14.00" fill="#000000">index</text>
-<polyline fill="none" stroke="#000000" points="342,-92.5 480,-92.5 "/>
-<polyline fill="none" stroke="#000000" points="342,-68.5 480,-68.5 "/>
-<text text-anchor="start" x="350" y="-53.3" font-family="Times,serif" font-size="14.00" fill="#000000">_layout</text>
-<text text-anchor="start" x="350" y="-38.3" font-family="Times,serif" font-size="14.00" fill="#000000">params_permit</text>
-<text text-anchor="start" x="350" y="-23.3" font-family="Times,serif" font-size="14.00" fill="#000000">set_fridge_item</text>
+<path fill="none" stroke="#000000" d="M354,-.5C354,-.5 468,-.5 468,-.5 474,-.5 480,-6.5 480,-12.5 480,-12.5 480,-231.5 480,-231.5 480,-237.5 474,-243.5 468,-243.5 468,-243.5 354,-243.5 354,-243.5 348,-243.5 342,-237.5 342,-231.5 342,-231.5 342,-12.5 342,-12.5 342,-6.5 348,-.5 354,-.5"/>
+<text text-anchor="middle" x="411" y="-228.3" font-family="Times,serif" font-size="14.00" fill="#000000">FridgeItemsController</text>
+<polyline fill="none" stroke="#000000" points="342,-220.5 480,-220.5 "/>
+<text text-anchor="start" x="350" y="-205.3" font-family="Times,serif" font-size="14.00" fill="#000000">create</text>
+<text text-anchor="start" x="350" y="-190.3" font-family="Times,serif" font-size="14.00" fill="#000000">decrease</text>
+<text text-anchor="start" x="350" y="-175.3" font-family="Times,serif" font-size="14.00" fill="#000000">delete</text>
+<text text-anchor="start" x="350" y="-160.3" font-family="Times,serif" font-size="14.00" fill="#000000">empty</text>
+<text text-anchor="start" x="350" y="-145.3" font-family="Times,serif" font-size="14.00" fill="#000000">increase</text>
+<text text-anchor="start" x="350" y="-130.3" font-family="Times,serif" font-size="14.00" fill="#000000">index</text>
+<polyline fill="none" stroke="#000000" points="342,-122.5 480,-122.5 "/>
+<polyline fill="none" stroke="#000000" points="342,-98.5 480,-98.5 "/>
+<text text-anchor="start" x="350" y="-83.3" font-family="Times,serif" font-size="14.00" fill="#000000">_layout</text>
+<text text-anchor="start" x="350" y="-68.3" font-family="Times,serif" font-size="14.00" fill="#000000">params_permit</text>
+<text text-anchor="start" x="350" y="-53.3" font-family="Times,serif" font-size="14.00" fill="#000000">render_create_js</text>
+<text text-anchor="start" x="350" y="-38.3" font-family="Times,serif" font-size="14.00" fill="#000000">render_refresh_js</text>
+<text text-anchor="start" x="350" y="-23.3" font-family="Times,serif" font-size="14.00" fill="#000000">set_fridge</text>
+<text text-anchor="start" x="350" y="-8.3" font-family="Times,serif" font-size="14.00" fill="#000000">set_fridge_item</text>
 </g>
 <!-- GroceryItemsController -->
 <g id="node4" class="node">
