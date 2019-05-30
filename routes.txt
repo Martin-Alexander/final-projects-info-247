@@ -1,20 +1,31 @@
 ========== ./Arkangel/config/routes.rb ===========
 Rails.application.routes.draw do
+
   devise_for :users
   root to: 'pages#home'
+
+  get 'dashboard', to: 'pages#dashboard', as: 'dashboard'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get "user_score/graph", to: 'user_score#graph', as: 'graph'
+  get "user_score/day_graph", to: 'user_score#day_graph', as: 'day_graph'
 end
 ========== ./cook-eazy/config/routes.rb ===========
 Rails.application.routes.draw do
+  get 'reviews/create'
   devise_for :users
   root to: 'pages#landing'
 
   # Recipes Routes
   get 'recipes' => 'recipes#index', as: :recipes
-
-  get 'recipes/:id/steps' => 'recipes#steps', as: :recipe_steps
-
   get 'recipes/:id' => 'recipes#show', as: :recipe
+  get 'recipes/:id/popup' => 'recipes#popup', as: :recipe_popup
+  get 'recipes/:id/steps' => 'recipes#steps', as: :recipe_steps
+  get 'recipes/:id/steps/:step_number' => 'recipes#steps'
+  post 'recipes/:id/reviews' => 'reviews#create', as: :recipe_reviews
+  get 'my-recipes', to: "recipes#index_owner", as: :my_recipes
+  get 'recipe/new', to: 'recipes#new', as: :new_recipe
+  post 'recipes', to: 'recipes#create'
+  post 'recipes/:recipe_id/add-to-grocery' => 'grocery_items#add', as: :add_grocery_items
 
   # Grocery Lists Routes
   get 'grocery-list' => 'grocery_items#index', as: :grocery_items
@@ -24,6 +35,7 @@ Rails.application.routes.draw do
   patch 'grocery-list/:id/increase' => 'grocery_items#increase', as: :increase_grocery_item
   patch 'grocery-list/:id/decrease' => 'grocery_items#decrease', as: :decrease_grocery_item
   patch 'grocery-list' => 'grocery_items#update'
+  delete 'grocery-list/:id' => 'grocery_items#destroy', as: :grocery_item
 
   # Fridge Routes
   get 'fridge' => 'fridge_items#index', as: :fridge
@@ -34,26 +46,28 @@ Rails.application.routes.draw do
   patch 'fridge/fill' => 'fridge_items#fill'
   patch 'fridge/empty' => 'fridge_items#empty'
 
-  # Cooking Lists Routes
-  get 'cooking_list' => 'cooking_list_items#index'
-  patch 'recipes/:id/add-to-cooking-list' => 'cooking_list_items#create', as: :add_recipe_to_cooking_list
+  # Wishist Routes
+  get 'wishlist' => 'wishlist_items#index', as: :wishlist_items
+  post 'recipes/:recipe_id/wishlist/new' => 'wishlist_items#create', as: :new_wishlist_item
 end
 ========== ./goclimb/config/routes.rb ===========
 Rails.application.routes.draw do
   devise_for :users
 
-resources :routes do
-  resources :reviews
-end
-resources :trips
+	resources :routes do
+	  resources :reviews, only: [:new, :index, :create, :show]
+	end
+	resources :trips
+	resources :reviews, only: [:destroy]
 
 
-resources :sites, only: [:show] do
-  resources :reviews
-end
-resources :users, only: [:show]
+	resources :sites, only: [:show] do
+	  resources :reviews
+	end
+	resources :users, only: [:show]
 
-root to: 'pages#home'
+	root to: 'pages#home'
+  get 'profile', to: 'pages#profile'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 
@@ -67,14 +81,27 @@ Rails.application.routes.draw do
     resource :comparison, only: [:show]
 
     collection do
-      get :search
+      post :search
     end
   end
+
+
+ resource :map, only: [:show] do
+  collection do
+    get :nearby_pharmacy
+  end
+ end
+  
+  get "/mf_styles", to:"pages#mf_styles"
+
 end
 ========== ./quick-outfit/config/routes.rb ===========
 Rails.application.routes.draw do
   resources :outfits
   resources :items
+
+  get "/csscomponents", to: 'pages#csscomponents'
+  get "/menu", to: 'pages#menu'
 
   devise_for :users
   root to: 'pages#home'
@@ -85,9 +112,15 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :projects, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :projects do
+    resources :favorites, only: [] do
+      collection do
+        post 'toggle'
+      end
+    end
+  end
   resources :users
-  resources :favorites
+  resources :favorites, only: [:index]
 
   get '/profile/:id', to: 'pages#profile', as: :profile
     # resources: favorites only: [:index, :new, :create, :destroy]
@@ -95,6 +128,8 @@ end
 ========== ./wizard/config/routes.rb ===========
 Rails.application.routes.draw do
   devise_for :users
+  resources :users, only: [:index, :show, :new ]
+  resources :pages, only: [:index]
   root to: 'users#index'
-  resources :users, only: [:index, :show, :new, :create]
+  resources :maps, only: [:index]
 end
